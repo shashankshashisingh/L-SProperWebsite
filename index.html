@@ -324,6 +324,101 @@ footer.foot { margin-top: 48px; letter-spacing: .02em; }
   .gear-btn, button.btn, section.card, tbody tr, .dropzone { transition: none !important; }
 }
 
+
+/* FINISHING TOUCHES — visual-only polish */
+body {
+ background-image:
+  radial-gradient(ellipse at 8% 0%, color-mix(in srgb,var(--short) 10%,transparent),transparent 32rem),
+  radial-gradient(ellipse at 92% 12%,color-mix(in srgb,var(--long) 8%,transparent),transparent 28rem),
+  linear-gradient(color-mix(in srgb,var(--line) 15%,transparent) 1px,transparent 1px),
+  linear-gradient(90deg,color-mix(in srgb,var(--line) 15%,transparent) 1px,transparent 1px);
+ background-size:auto,auto,34px 34px,34px 34px; background-attachment:fixed;
+}
+.wrap { position:relative; isolation:isolate; }
+header.top { position:relative; }
+header.top::before {
+ content:"";position:absolute;z-index:-1;top:-26px;left:-28px;right:-28px;height:160px;
+ border-radius:24px;pointer-events:none;
+ background:linear-gradient(110deg,color-mix(in srgb,var(--card) 88%,transparent),transparent 78%);
+}
+.hero {
+ position:relative;overflow:hidden;
+ box-shadow:0 10px 32px rgba(25,45,75,.06);
+ backdrop-filter:blur(10px);
+ animation:finish-enter .45s ease-out both;
+}
+.hero::after {
+ content:"";position:absolute;top:0;left:0;right:0;height:3px;pointer-events:none;
+ background:linear-gradient(90deg,var(--long),color-mix(in srgb,var(--long) 15%,var(--short)),var(--short));
+}
+.hero .stat,.stats-grid .stat { transition:background .2s ease; }
+.hero .stat:hover,.stats-grid .stat:hover { background:color-mix(in srgb,var(--short-soft) 32%,var(--card)); }
+.hero .value,.stats-grid .value { font-variant-numeric:tabular-nums; }
+section.card {
+ position:relative;overflow:hidden;
+ box-shadow:0 9px 30px rgba(25,45,75,.05);backdrop-filter:blur(8px);
+ transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+ animation:finish-enter .42s ease-out both;
+}
+section.card::before {
+ content:"";position:absolute;top:0;left:0;bottom:0;width:3px;
+ background:linear-gradient(180deg,var(--long),var(--short));opacity:0;
+ transition:opacity .2s ease;pointer-events:none;
+}
+section.card:hover { transform:translateY(-2px);box-shadow:0 16px 42px rgba(25,45,75,.09); }
+section.card:hover::before { opacity:.8; }
+section.card h2 { letter-spacing:-.035em; }
+.dropzone {
+ position:relative;overflow:hidden;
+ background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--long) 8%,transparent),transparent 72%),color-mix(in srgb,var(--card) 82%,var(--long-soft));
+ transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.dropzone::after {
+ content:"XLSX  ·  CSV";display:inline-block;margin-top:12px;padding:4px 10px;
+ border:1px solid color-mix(in srgb,var(--long) 25%,var(--line));border-radius:999px;
+ color:var(--ink-faint);background:color-mix(in srgb,var(--card) 80%,transparent);
+ font:10px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.08em;pointer-events:none;
+}
+.dropzone:hover,.dropzone.drag,.dropzone:focus-visible {
+ transform:translateY(-1px);box-shadow:0 10px 24px color-mix(in srgb,var(--long) 10%,transparent);
+}
+button.btn,.gear-btn,.toggle-link { -webkit-tap-highlight-color:transparent; }
+button.btn:active,.gear-btn:active { transform:translateY(0) scale(.985); }
+button.btn:focus-visible,.gear-btn:focus-visible,.toggle-link:focus-visible,select:focus-visible,input:focus-visible {
+ outline:3px solid color-mix(in srgb,var(--short) 72%,transparent);outline-offset:3px;
+}
+button.btn.secondary { background:color-mix(in srgb,var(--card) 90%,var(--paper-2)); }
+button.btn.danger:hover { transform:translateY(-1px); }
+select,input[type=text],input[type=password],input[type=number],input[type=date] { box-shadow:inset 0 1px 2px rgba(20,40,60,.025); }
+.table-scroll { box-shadow:inset 0 1px 0 color-mix(in srgb,var(--card) 80%,transparent);scrollbar-color:var(--line) transparent; }
+thead th { background:color-mix(in srgb,var(--paper-2) 65%,var(--card));position:sticky;top:0;z-index:1; }
+tbody tr:nth-child(even) { background:color-mix(in srgb,var(--paper-2) 17%,transparent); }
+tbody tr { transition:background .14s ease; }
+tbody tr:hover { box-shadow:inset 3px 0 0 var(--short); }
+tbody tr.sel-long:hover { box-shadow:inset 3px 0 0 var(--long); }
+tbody tr.sel-short:hover { box-shadow:inset 3px 0 0 var(--short); }
+.tag,.badge-pending,.state,.rank { border-radius:999px; }
+.stats-grid { overflow:hidden;border:1px solid var(--line);background:var(--card); }
+.banner { box-shadow:0 3px 12px rgba(20,40,60,.035); }
+.toast { backdrop-filter:blur(14px); }
+.overlay { animation:finish-fade .18s ease-out both; }
+.panel { animation:finish-panel .22s cubic-bezier(.2,.75,.25,1) both; }
+.charges-box { background:color-mix(in srgb,var(--paper-2) 38%,var(--card)); }
+footer.foot { color:var(--ink-faint); }
+@keyframes finish-enter { from { opacity:0;transform:translateY(7px); } to { opacity:1;transform:translateY(0); } }
+@keyframes finish-fade { from { opacity:0; } to { opacity:1; } }
+@keyframes finish-panel { from { opacity:0;transform:translateY(8px) scale(.99); } to { opacity:1;transform:translateY(0) scale(1); } }
+@media(max-width:680px) {
+ body { background-attachment:scroll;background-size:auto,auto,26px 26px,26px 26px; }
+ header.top::before { left:-14px;right:-14px; }
+ .hero .stat:hover,.stats-grid .stat:hover { background:transparent; }
+ section.card:hover { transform:none; }
+ .dropzone { padding:28px 14px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ *,*::before,*::after { animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important; }
+}
+
 </style>
 
 <div class="wrap">
