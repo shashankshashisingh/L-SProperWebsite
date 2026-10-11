@@ -498,6 +498,88 @@ thead th{font-weight:500;color:var(--ink-faint);background:color-mix(in srgb,var
 @media(max-width:760px){body{background-attachment:scroll}.wrap:after{animation-duration:13s}section.card:hover{transform:none}.dropzone:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
+
+/* DARK MODE DEEP GRAPHITE REFINEMENT */
+:root[data-theme="dark"] {
+ --paper:#080a0d;--paper-2:#0e1116;--card:rgba(18,21,26,.82);
+ --ink:#f0f2f4;--ink-soft:#b0b6be;--ink-faint:#777f89;--line:rgba(210,219,230,.12);
+ --long:#e7ebef;--long-soft:#171d23;--short:#aeb6c0;--short-soft:#191e24;
+ --gain:#83cbb0;--loss:#f19a9a;--loss-soft:#2c171b;--flag:#dfc18a;--flag-soft:#292319;
+ color-scheme:dark;
+}
+@media(prefers-color-scheme:dark) {
+ :root:not([data-theme="light"]) {
+  --paper:#080a0d;--paper-2:#0e1116;--card:rgba(18,21,26,.82);
+  --ink:#f0f2f4;--ink-soft:#b0b6be;--ink-faint:#777f89;--line:rgba(210,219,230,.12);
+  --long:#e7ebef;--long-soft:#171d23;--short:#aeb6c0;--short-soft:#191e24;
+  --gain:#83cbb0;--loss:#f19a9a;--loss-soft:#2c171b;--flag:#dfc18a;--flag-soft:#292319;
+  color-scheme:dark;
+ }
+}
+:root[data-theme="dark"] body,
+@media(prefers-color-scheme:dark) {
+}
+:root[data-theme="dark"] body {
+ background:radial-gradient(ellipse at 50% -12%,rgba(95,105,119,.12),transparent 34rem),radial-gradient(ellipse at 88% 32%,rgba(51,60,72,.10),transparent 38rem),var(--paper);
+}
+:root[data-theme="dark"] .wrap {
+ background:linear-gradient(145deg,rgba(17,20,25,.94),rgba(10,12,16,.9) 58%,rgba(20,23,28,.9));
+ border-color:rgba(220,228,238,.14);
+ box-shadow:0 30px 100px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.055);
+}
+:root[data-theme="dark"] .wrap:after {
+ background:radial-gradient(ellipse at 31% 24%,rgba(225,230,236,.25),rgba(174,183,194,.10) 17%,transparent 36%),radial-gradient(ellipse at 52% 55%,rgba(105,114,126,.32),rgba(68,76,88,.28) 39%,rgba(31,36,44,.2) 61%,rgba(15,18,23,.08) 72%,transparent 75%);
+ box-shadow:0 28px 70px rgba(0,0,0,.28),inset -18px -20px 38px rgba(0,0,0,.18),inset 10px 9px 28px rgba(255,255,255,.10);
+}
+:root[data-theme="dark"] .hero,
+:root[data-theme="dark"] section.card,
+:root[data-theme="dark"] .stats-grid,
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .toast,
+:root[data-theme="dark"] .banner {
+ background:linear-gradient(145deg,rgba(22,25,30,.94),rgba(13,16,20,.92));
+ border-color:rgba(215,224,235,.11);
+ box-shadow:0 14px 42px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.035);
+}
+:root[data-theme="dark"] .dropzone {
+ background:linear-gradient(135deg,rgba(20,23,28,.94),rgba(12,15,19,.92));
+ border-color:rgba(190,200,212,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+:root[data-theme="dark"] .dropzone::before {background:linear-gradient(90deg,transparent,rgba(220,228,238,.08),transparent)}
+:root[data-theme="dark"] .dropzone:hover,
+:root[data-theme="dark"] .dropzone.drag,
+:root[data-theme="dark"] .dropzone:focus-visible {
+ background:linear-gradient(135deg,#171b21,#0e1116);border-color:rgba(210,220,232,.38);
+ box-shadow:0 18px 40px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.055);
+}
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] input[type=text],
+:root[data-theme="dark"] input[type=password],
+:root[data-theme="dark"] input[type=number],
+:root[data-theme="dark"] input[type=date],
+:root[data-theme="dark"] textarea {
+ background:rgba(9,12,16,.78);border-color:rgba(205,215,228,.15);color:var(--ink);
+}
+:root[data-theme="dark"] thead th {background:#11151a;color:#8f98a3}
+:root[data-theme="dark"] .table-scroll {background:rgba(10,13,17,.62);border-color:rgba(210,219,230,.11)}
+:root[data-theme="dark"] tbody tr:hover {background:rgba(155,166,180,.08);box-shadow:inset 3px 0 0 #737d89}
+:root[data-theme="dark"] button.btn.secondary,
+:root[data-theme="dark"] .gear-btn {background:rgba(27,31,37,.88);border-color:rgba(210,219,230,.14);color:var(--ink-soft)}
+@media(prefers-color-scheme:dark) {
+ :root:not([data-theme="light"]) body {background:radial-gradient(ellipse at 50% -12%,rgba(95,105,119,.12),transparent 34rem),radial-gradient(ellipse at 88% 32%,rgba(51,60,72,.10),transparent 38rem),var(--paper)}
+ :root:not([data-theme="light"]) .wrap {background:linear-gradient(145deg,rgba(17,20,25,.94),rgba(10,12,16,.9) 58%,rgba(20,23,28,.9));border-color:rgba(220,228,238,.14);box-shadow:0 30px 100px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.055)}
+ :root:not([data-theme="light"]) .wrap:after {background:radial-gradient(ellipse at 31% 24%,rgba(225,230,236,.25),rgba(174,183,194,.10) 17%,transparent 36%),radial-gradient(ellipse at 52% 55%,rgba(105,114,126,.32),rgba(68,76,88,.28) 39%,rgba(31,36,44,.2) 61%,rgba(15,18,23,.08) 72%,transparent 75%);box-shadow:0 28px 70px rgba(0,0,0,.28),inset -18px -20px 38px rgba(0,0,0,.18),inset 10px 9px 28px rgba(255,255,255,.10)}
+ :root:not([data-theme="light"]) .hero,:root:not([data-theme="light"]) section.card,:root:not([data-theme="light"]) .stats-grid,:root:not([data-theme="light"]) .panel,:root:not([data-theme="light"]) .toast,:root:not([data-theme="light"]) .banner {background:linear-gradient(145deg,rgba(22,25,30,.94),rgba(13,16,20,.92));border-color:rgba(215,224,235,.11);box-shadow:0 14px 42px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.035)}
+ :root:not([data-theme="light"]) .dropzone {background:linear-gradient(135deg,rgba(20,23,28,.94),rgba(12,15,19,.92));border-color:rgba(190,200,212,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
+ :root:not([data-theme="light"]) .dropzone::before {background:linear-gradient(90deg,transparent,rgba(220,228,238,.08),transparent)}
+ :root:not([data-theme="light"]) .dropzone:hover,:root:not([data-theme="light"]) .dropzone.drag,:root:not([data-theme="light"]) .dropzone:focus-visible {background:linear-gradient(135deg,#171b21,#0e1116);border-color:rgba(210,220,232,.38);box-shadow:0 18px 40px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.055)}
+ :root:not([data-theme="light"]) select,:root:not([data-theme="light"]) input[type=text],:root:not([data-theme="light"]) input[type=password],:root:not([data-theme="light"]) input[type=number],:root:not([data-theme="light"]) input[type=date],:root:not([data-theme="light"]) textarea {background:rgba(9,12,16,.78);border-color:rgba(205,215,228,.15);color:var(--ink)}
+ :root:not([data-theme="light"]) thead th {background:#11151a;color:#8f98a3}
+ :root:not([data-theme="light"]) .table-scroll {background:rgba(10,13,17,.62);border-color:rgba(210,219,230,.11)}
+ :root:not([data-theme="light"]) tbody tr:hover {background:rgba(155,166,180,.08);box-shadow:inset 3px 0 0 #737d89}
+ :root:not([data-theme="light"]) button.btn.secondary,:root:not([data-theme="light"]) .gear-btn {background:rgba(27,31,37,.88);border-color:rgba(210,219,230,.14);color:var(--ink-soft)}
+}
+
 </style>
 
 <div class="wrap">
